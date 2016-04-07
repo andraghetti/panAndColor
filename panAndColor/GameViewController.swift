@@ -14,7 +14,7 @@ import SpriteKit
 class GameViewController: UIViewController {
     
     // create a new scene
-    let scene = SCNScene(named: "art.scnassets/ship.scn")!
+    let scene = SCNScene(named: "ship.scn")!
 
     var nodeToDrawOn: SCNNode!
     var skScene: SKScene!

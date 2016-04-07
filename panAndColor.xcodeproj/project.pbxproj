@@ -13,9 +13,8 @@
 		9906EF5D1C064C4100FEA7A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9906EF5C1C064C4100FEA7A4 /* Assets.xcassets */; };
 		9906EF601C064C4100FEA7A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9906EF5E1C064C4100FEA7A4 /* LaunchScreen.storyboard */; };
 		9906EF6B1C064C4100FEA7A4 /* applicaPuntoInTextureTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9906EF6A1C064C4100FEA7A4 /* applicaPuntoInTextureTests.swift */; };
-		992FDE0D1CB700D200FB16E0 /* art.scnassets in Resources */ = {isa = PBXBuildFile; fileRef = 992FDE0C1CB700D200FB16E0 /* art.scnassets */; };
-		99CCD4131C10528C00A9A0A0 /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 99CCD4121C10528C00A9A0A0 /* texture.png */; };
-		99CCD4151C1052A500A9A0A0 /* ship.scn in Resources */ = {isa = PBXBuildFile; fileRef = 99CCD4141C1052A500A9A0A0 /* ship.scn */; };
+		99BE5C481CB70BAE00B9773B /* ship.scn in Resources */ = {isa = PBXBuildFile; fileRef = 99BE5C461CB70BAE00B9773B /* ship.scn */; };
+		99BE5C491CB70BAE00B9773B /* texture.png in Resources */ = {isa = PBXBuildFile; fileRef = 99BE5C471CB70BAE00B9773B /* texture.png */; };
 		99F85C861C08972800EF2A01 /* SpriteKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F85C851C08972800EF2A01 /* SpriteKit.framework */; };
 		99F85C881C08972F00EF2A01 /* SceneKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F85C871C08972F00EF2A01 /* SceneKit.framework */; };
 		99F85C8A1C08973700EF2A01 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99F85C891C08973700EF2A01 /* QuartzCore.framework */; };
@@ -42,9 +41,8 @@
 		9906EF661C064C4100FEA7A4 /* panAndColor.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = panAndColor.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9906EF6A1C064C4100FEA7A4 /* applicaPuntoInTextureTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = applicaPuntoInTextureTests.swift; sourceTree = "<group>"; };
 		9906EF6C1C064C4100FEA7A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		992FDE0C1CB700D200FB16E0 /* art.scnassets */ = {isa = PBXFileReference; lastKnownFileType = wrapper.scnassets; path = art.scnassets; sourceTree = "<group>"; };
-		99CCD4121C10528C00A9A0A0 /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = texture.png; path = art.scnassets/texture.png; sourceTree = "<group>"; };
-		99CCD4141C1052A500A9A0A0 /* ship.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; name = ship.scn; path = art.scnassets/ship.scn; sourceTree = "<group>"; };
+		99BE5C461CB70BAE00B9773B /* ship.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = ship.scn; sourceTree = "<group>"; };
+		99BE5C471CB70BAE00B9773B /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
 		99F85C851C08972800EF2A01 /* SpriteKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SpriteKit.framework; path = System/Library/Frameworks/SpriteKit.framework; sourceTree = SDKROOT; };
 		99F85C871C08972F00EF2A01 /* SceneKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SceneKit.framework; path = System/Library/Frameworks/SceneKit.framework; sourceTree = SDKROOT; };
 		99F85C891C08973700EF2A01 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
@@ -97,16 +95,14 @@
 			children = (
 				9906EF531C064C4100FEA7A4 /* AppDelegate.swift */,
 				9906EF571C064C4100FEA7A4 /* GameViewController.swift */,
-				992FDE0C1CB700D200FB16E0 /* art.scnassets */,
-				99CCD4121C10528C00A9A0A0 /* texture.png */,
-				99CCD4141C1052A500A9A0A0 /* ship.scn */,
 				9906EF591C064C4100FEA7A4 /* Main.storyboard */,
+				99BE5C461CB70BAE00B9773B /* ship.scn */,
+				99BE5C471CB70BAE00B9773B /* texture.png */,
 				9906EF5C1C064C4100FEA7A4 /* Assets.xcassets */,
 				9906EF5E1C064C4100FEA7A4 /* LaunchScreen.storyboard */,
 				9906EF611C064C4100FEA7A4 /* Info.plist */,
 			);
-			name = panAndColor;
-			path = applicaPuntoInTexture;
+			path = panAndColor;
 			sourceTree = "<group>";
 		};
 		9906EF691C064C4100FEA7A4 /* panAndColorTests */ = {
@@ -202,11 +198,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				99CCD4131C10528C00A9A0A0 /* texture.png in Resources */,
-				992FDE0D1CB700D200FB16E0 /* art.scnassets in Resources */,
-				99CCD4151C1052A500A9A0A0 /* ship.scn in Resources */,
+				99BE5C491CB70BAE00B9773B /* texture.png in Resources */,
 				9906EF601C064C4100FEA7A4 /* LaunchScreen.storyboard in Resources */,
 				9906EF5D1C064C4100FEA7A4 /* Assets.xcassets in Resources */,
+				99BE5C481CB70BAE00B9773B /* ship.scn in Resources */,
 				9906EF5B1C064C4100FEA7A4 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -355,7 +350,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = applicaPuntoInTexture/Info.plist;
+				INFOPLIST_FILE = panAndColor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lorenzo-Andraghetti.panAndColor";
 				PRODUCT_NAME = panAndColor;
@@ -366,7 +361,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = applicaPuntoInTexture/Info.plist;
+				INFOPLIST_FILE = panAndColor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "Lorenzo-Andraghetti.panAndColor";
 				PRODUCT_NAME = panAndColor;
