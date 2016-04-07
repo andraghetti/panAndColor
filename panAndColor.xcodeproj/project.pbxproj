@@ -77,8 +77,8 @@
 				99F85C891C08973700EF2A01 /* QuartzCore.framework */,
 				99F85C871C08972F00EF2A01 /* SceneKit.framework */,
 				99F85C851C08972800EF2A01 /* SpriteKit.framework */,
-				9906EF521C064C4100FEA7A4 /* applicaPuntoInTexture */,
-				9906EF691C064C4100FEA7A4 /* applicaPuntoInTextureTests */,
+				9906EF521C064C4100FEA7A4 /* panAndColor */,
+				9906EF691C064C4100FEA7A4 /* panAndColorTests */,
 				9906EF511C064C4100FEA7A4 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -92,7 +92,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9906EF521C064C4100FEA7A4 /* applicaPuntoInTexture */ = {
+		9906EF521C064C4100FEA7A4 /* panAndColor */ = {
 			isa = PBXGroup;
 			children = (
 				9906EF531C064C4100FEA7A4 /* AppDelegate.swift */,
@@ -105,15 +105,17 @@
 				9906EF5E1C064C4100FEA7A4 /* LaunchScreen.storyboard */,
 				9906EF611C064C4100FEA7A4 /* Info.plist */,
 			);
+			name = panAndColor;
 			path = applicaPuntoInTexture;
 			sourceTree = "<group>";
 		};
-		9906EF691C064C4100FEA7A4 /* applicaPuntoInTextureTests */ = {
+		9906EF691C064C4100FEA7A4 /* panAndColorTests */ = {
 			isa = PBXGroup;
 			children = (
 				9906EF6A1C064C4100FEA7A4 /* applicaPuntoInTextureTests.swift */,
 				9906EF6C1C064C4100FEA7A4 /* Info.plist */,
 			);
+			name = panAndColorTests;
 			path = applicaPuntoInTextureTests;
 			sourceTree = "<group>";
 		};
