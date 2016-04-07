@@ -9,15 +9,23 @@
 import UIKit
 import QuartzCore
 import SceneKit
+import SpriteKit
 
 class GameViewController: UIViewController {
+    
+    // create a new scene
+    let scene = SCNScene(named: "art.scnassets/ship.scn")!
+
+    var nodeToDrawOn: SCNNode!
+    var skScene: SKScene!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
-        
+        initialSetup()
+    }
+    
+    func initialSetup() -> Void {
         // create and add a camera to the scene
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()
@@ -40,12 +48,6 @@ class GameViewController: UIViewController {
         ambientLightNode.light!.color = UIColor.darkGrayColor()
         scene.rootNode.addChildNode(ambientLightNode)
         
-        // retrieve the ship node
-        let ship = scene.rootNode.childNodeWithName("ship", recursively: true)!
-        
-        // animate the 3d object
-        ship.runAction(SCNAction.repeatActionForever(SCNAction.rotateByX(0, y: 2, z: 0, duration: 1)))
-        
         // retrieve the SCNView
         let scnView = self.view as! SCNView
         
@@ -55,51 +57,65 @@ class GameViewController: UIViewController {
         // allows the user to manipulate the camera
         scnView.allowsCameraControl = true
         
-        // show statistics such as fps and timing information
-        scnView.showsStatistics = true
+        //IMPORTANTE:
+        //1. get ship
+        nodeToDrawOn = scene.rootNode.childNodeWithName("shipMesh", recursively: true)!
         
-        // configure the view
-        scnView.backgroundColor = UIColor.blackColor()
+        // 2. set up that node's texture as a SpriteKit scene
+        let currentImageURL = nodeToDrawOn.geometry!.firstMaterial!.diffuse.contents as! NSURL
+        let currentImage = UIImage(data: NSData(contentsOfURL: currentImageURL)!)!
         
-        // add a tap gesture recognizer
-        let tapGesture = UITapGestureRecognizer(target: self, action: "handleTap:")
-        scnView.addGestureRecognizer(tapGesture)
+        //let texture: SKTexture = textureFromNode(nodeToDrawOn)
+        skScene = SKScene(size: currentImage.size)
+        
+        nodeToDrawOn.geometry!.firstMaterial!.diffuse.contents = skScene
+        
+        let translate = SCNMatrix4MakeTranslation(0, 1, 0)
+        let yFlippedTranslate = SCNMatrix4Scale(translate, 1, -1, 1)
+        nodeToDrawOn.geometry!.firstMaterial!.diffuse.contentsTransform = yFlippedTranslate
+        
+        
+        // 3. put the currentImage into a background sprite for the skScene
+        let background = SKSpriteNode(texture: SKTexture(image: currentImage))
+        background.position = CGPoint(x: skScene.frame.midX, y: skScene.frame.midY)
+        
+        skScene.addChild(background)
+        
+        // add a pan gesture recognizer
+        let panGesture = UIPanGestureRecognizer(target: self, action: #selector(GameViewController.handlePan(_:)))
+        scnView.addGestureRecognizer(panGesture)
+
     }
     
-    func handleTap(gestureRecognize: UIGestureRecognizer) {
+    @IBOutlet weak var tempImageView: UIImageView!
+    
+    func printSpot(result: SCNHitTestResult) {
+        
+        let sprite = SKSpriteNode(color: SKColor.redColor(), size: CGSize(width: 10, height: 10))
+        
+        let texcoord = result.textureCoordinatesWithMappingChannel(0)
+        sprite.position.x = texcoord.x * skScene.size.width
+        sprite.position.y = (1 - texcoord.y) * skScene.size.height
+        
+        skScene.addChild(sprite)
+    }
+    
+    func handlePan(sender: UIPanGestureRecognizer) {
         // retrieve the SCNView
         let scnView = self.view as! SCNView
-        
-        // check what nodes are tapped
-        let p = gestureRecognize.locationInView(scnView)
-        let hitResults = scnView.hitTest(p, options: nil)
-        // check that we clicked on at least one object
-        if hitResults.count > 0 {
-            // retrieved the first clicked object
-            let result: AnyObject! = hitResults[0]
-            
-            // get its material
-            let material = result.node!.geometry!.firstMaterial!
-            
-            // highlight it
-            SCNTransaction.begin()
-            SCNTransaction.setAnimationDuration(0.5)
-            
-            // on completion - unhighlight
-            SCNTransaction.setCompletionBlock {
-                SCNTransaction.begin()
-                SCNTransaction.setAnimationDuration(0.5)
-                
-                material.emission.contents = UIColor.blackColor()
-                
-                SCNTransaction.commit()
-            }
-            
-            material.emission.contents = UIColor.redColor()
-            
-            SCNTransaction.commit()
+        let results = scnView.hitTest(sender.locationInView(scnView), options: [SCNHitTestFirstFoundOnlyKey: true]) as [SCNHitTestResult]
+        for result in results {
+//            if result.node === nodeToDrawOn {
+//                printSpot(result);
+//            }
+            printSpot(result);
         }
+        
+        nodeToDrawOn.position = SCNVector3(x: 0, y: 0, z: 5)
+        nodeToDrawOn.position = SCNVector3(x: 0, y: 0, z: 0)
+
     }
+    
     
     override func shouldAutorotate() -> Bool {
         return true

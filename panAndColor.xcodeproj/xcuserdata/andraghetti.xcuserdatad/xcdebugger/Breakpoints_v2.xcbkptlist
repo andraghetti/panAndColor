@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "applicaPuntoInTexture/TextureViewController.swift"
+            timestampString = "470324290.361084"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "applicaPuntoInTexture/CleanTextureViewController.swift"
+            timestampString = "473246730.119146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "100"
+            endingLineNumber = "100"
+            landmarkName = "singleTap(_:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "applicaPuntoInTexture.CleanTextureViewController.singleTap (applicaPuntoInTexture.CleanTextureViewController)(__ObjC.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "applicaPuntoInTexture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andraghetti/Documents/Progetti%20iOS/applicaPuntoInTexture/applicaPuntoInTexture/CleanTextureViewController.swift"
+                  timestampString = "470833724.023978"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "2408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "applicaPuntoInTexture.CleanTextureViewController.singleTap (applicaPuntoInTexture.CleanTextureViewController)(__ObjC.UITapGestureRecognizer) -&gt; ()"
+                  moduleName = "applicaPuntoInTexture"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Andraghetti/Documents/Progetti%20iOS/applicaPuntoInTexture/applicaPuntoInTexture/CleanTextureViewController.swift"
+                  timestampString = "470833724.024347"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "96"
+                  endingLineNumber = "96"
+                  offsetFromSymbolStart = "2432">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "applicaPuntoInTexture/CleanTextureViewController.swift"
+            timestampString = "473246730.119146"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "CleanTextureViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
